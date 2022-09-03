@@ -1,18 +1,18 @@
 import React, { useState } from "react"
 
-const Filter = ({ setFilter, filter }) => {
+const Filter = ({ setFilter, filter, date }) => {
   const [input, setInput] = useState("")
-  const [date, setDate] = useState("")
+  const [dateInput, setDateInput] = useState("")
   const [active, setActive] = useState(false)
 
   const tags = ["konsertti", "kirjallisuus", "liikunta", "musiikki", "näyttely", "teatteri"]
 
   const filterResults = (e) => {
     e.preventDefault()
-    setFilter(input)
+    setFilter([input, dateInput])
     setInput("")
   }
-  console.log(date)
+
   return (
     <>
       <div className="filter">
@@ -22,8 +22,8 @@ const Filter = ({ setFilter, filter }) => {
               className="date" 
               type="date" 
               name="date"
-              onChange={(e) => setDate(e.target.value)}
-              value={date}
+              onChange={(e) => setDateInput(e.target.value)}
+              value={dateInput}
             />
             <input
               type="text"

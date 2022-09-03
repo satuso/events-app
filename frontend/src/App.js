@@ -26,8 +26,7 @@ const App = () => {
   }, [filter])
 
   let matchEvents = events.filter(item => item.description.body.toLowerCase().includes(filter[0]) && item.event_dates.starting_day.includes(filter[1]))
-  console.log(filter)
-  console.log(matchEvents)
+
   if (!filter) {
     matchEvents = []
   } else {

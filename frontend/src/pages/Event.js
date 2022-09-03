@@ -9,7 +9,6 @@ import { useState } from "react"
 const Event = ({ setMessage, setLoading }) => {
   const { id } = useParams()
   const [event, setEvent] = useState([])
-  console.log(event)
   
   useEffect(() => {
     setLoading(true)
